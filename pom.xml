@@ -14,7 +14,7 @@
     <name>ipecho</name>
     <description>用于获取公网IP, 访问路径&apos;/ip/echo&apos;</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
     </properties>
     <dependencies>
         <dependency>
