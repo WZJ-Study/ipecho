@@ -16,8 +16,14 @@ public class IpEchoController {
 
     @RequestMapping("/echo")
     public String getPublicIp(HttpServletRequest request) {
+        log.info("========[ getPublicIp Begin ]========");
+        log.info("x-forwarded-for: {}", request.getHeader("x-forwarded-for"));
+        log.info("Proxy-Client-IP: {}", request.getHeader("Proxy-Client-IP"));
+        log.info("WL-Proxy-Client-IP: {}", request.getHeader("WL-Proxy-Client-IP"));
+        log.info("request.getRemoteAddr: {}", request.getRemoteAddr());
         String ipAddress = getIpAddress(request);
         log.info("ipAddress = {}", ipAddress);
+        log.info("========[ getPublicIp End ]========\n");
         return ipAddress;
     }
 
